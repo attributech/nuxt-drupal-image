@@ -23,6 +23,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Add plugin to support Nuxt 2 with Bridge
-    addPlugin(resolver.resolve('./runtime/plugin.js'))
+    addPlugin(resolver.resolve('./runtime/plugin'))
   }
 })

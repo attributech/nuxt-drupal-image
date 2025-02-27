@@ -1,6 +1,6 @@
 {
   "name": "@attributech/nuxt-drupal-image",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Nuxt module for handling Drupal image styles",
   "type": "module",
   "repository": {
@@ -23,11 +23,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-module-build",
+    "build": "nuxt-module-build --config module.config.ts",
     "dev": "nuxi dev playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "nuxt-module-build",
+    "prepare": "nuxt-module-build --config module.config.ts",
     "release": "npm run lint && npm run build && npm publish",
     "prerelease": "npm run lint && npm run build",
     "test": "vitest run"
