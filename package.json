@@ -1,0 +1,54 @@
+{
+  "name": "@attributech/nuxt-drupal-image",
+  "version": "0.1.0",
+  "description": "Nuxt module for handling Drupal image styles",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attributech/nuxt-drupal-image.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt3",
+    "nuxt-module",
+    "drupal",
+    "image",
+    "image-styles"
+  ],
+  "author": "attribute",
+  "license": "MIT",
+  "main": "dist/module.mjs",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "nuxt-module-build",
+    "release": "npm run lint && npm run build && npm publish",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.10.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/module-builder": "^0.5.5",
+    "@nuxt/schema": "^3.10.0",
+    "@nuxt/test-utils": "^3.10.0",
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "nuxt": "^3.10.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "peerDependencies": {
+    "nuxt": "^2.16.0 || ^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.16.0"
+  }
+}
