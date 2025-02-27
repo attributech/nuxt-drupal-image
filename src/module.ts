@@ -16,9 +16,10 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    // Add composables auto-import
+    // Add composables and components auto-import
     nuxt.hook('imports:dirs', (dirs) => {
       dirs.push(resolver.resolve('./composables'))
+      dirs.push(resolver.resolve('./runtime/components'))
     })
 
     // Add plugin to support Nuxt 2 with Bridge
