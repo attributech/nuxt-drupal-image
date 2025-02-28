@@ -1,5 +1,5 @@
-import useImageUrl from '../composables/useImageUrl.js'
-import { DrupalImage } from './components/index.js'
+import useImageUrl from '../composables/useImageUrl'
+import { DrupalImage } from './components/index'
 
 // Type declarations for Nuxt plugin system
 declare const defineNuxtPlugin: (fn: (nuxtApp: any) => void) => any
