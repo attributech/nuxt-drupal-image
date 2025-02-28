@@ -116,6 +116,32 @@ import { useImageUrl } from '@attributech/nuxt-drupal-image'
 const url = useImageUrl(imageUri, style)
 ```
 
+## Development and Testing
+
+### Playground
+
+This module includes a playground for testing and development. The playground is a Nuxt 3 application that demonstrates various use cases of the module.
+
+To run the playground:
+
+```bash
+# Install dependencies
+npm install
+
+# Run the playground
+npm run dev
+```
+
+This will start a development server at http://localhost:3000 with examples of the module in action.
+
+The playground includes:
+- Basic examples of the DrupalImage component
+- Advanced usage examples with custom image styles
+- Responsive image examples
+- Mock API for simulating Drupal image data
+
+For more details, see the [playground README](./playground/README.md).
+
 ## License
 
 MIT

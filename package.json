@@ -30,7 +30,8 @@
     "prepare": "nuxt-module-build --config module.config.ts",
     "release": "npm run lint && npm run build && npm publish",
     "prerelease": "npm run lint && npm run build",
-    "test": "vitest run"
+    "test": "vitest run",
+    "playground": "nuxi dev playground"
   },
   "dependencies": {
     "@nuxt/eslint-config": "^1.1.0",

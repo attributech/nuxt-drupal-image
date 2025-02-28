@@ -35,5 +35,5 @@ lerna-debug.log*
 .env.*
 !.env.example
 
-# Playground
-playground
+# Keep playground in git
+# playground

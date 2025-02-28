@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-drupal-image-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "download-images": "node scripts/download-images.js",
+    "setup": "npm install && npm run download-images"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.10.0",
+    "typescript": "^5.3.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.0"
+  }
+}
