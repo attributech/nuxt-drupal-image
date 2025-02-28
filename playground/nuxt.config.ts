@@ -5,10 +5,11 @@ declare const defineNuxtConfig: (config: any) => any
 export default defineNuxtConfig({
   // Enable the module we're testing
   modules: ['../src/module'],
-  
+
   // Configure the module
   drupalImage: {
-    serverUrl: 'https://example.com',
+    // Will be set dynamically by the plugin
+    serverUrl: '',
     defaultImageStyles: [
       { name: 'thumbnail', width: 100 },
       { name: 'medium', width: 220 },
@@ -22,17 +23,25 @@ export default defineNuxtConfig({
       { name: 'default_xxxl', width: 2560 },
     ]
   },
-  
+
   // Expose the serverUrl to the runtime config
   runtimeConfig: {
     public: {
-      serverUrl: 'https://example.com'
+      // Will be set dynamically by the plugin
+      serverUrl: ''
     }
   },
   
+  // Register plugins
+  plugins: [
+    '~/plugins/dynamic-url.ts'
+  ],
+
   // Development settings
   devtools: { enabled: true },
-  
+
   // For development, disable SSR to make testing easier
-  ssr: false
+  ssr: false,
+
+  compatibilityDate: '2025-02-28'
 })
