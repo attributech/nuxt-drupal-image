@@ -1,7 +1,15 @@
 <template>
   <picture>
-    <source :data-srcset="srcSetWebp" type="image/webp" sizes="auto">
-    <source :data-srcset="srcSetDefault" type="image/jpeg" sizes="auto">
+    <source
+      :data-srcset="srcSetWebp"
+      type="image/webp"
+      sizes="auto"
+    >
+    <source
+      :data-srcset="srcSetDefault"
+      type="image/jpeg"
+      sizes="auto"
+    >
     <img
       ref="img"
       data-sizes="auto"
@@ -47,9 +55,9 @@ const props = withDefaults(defineProps<Props>(), {
       { name: `${imageStyleBase}_l`, width: 1280 },
       { name: `${imageStyleBase}_xl`, width: 1440 },
       { name: `${imageStyleBase}_xxl`, width: 1920 },
-      { name: `${imageStyleBase}_xxxl`, width: 2560 }
+      { name: `${imageStyleBase}_xxxl`, width: 2560 },
     ]
-  }
+  },
 })
 
 const srcSetWebp = computed(() => {
@@ -60,7 +68,7 @@ const srcSetDefault = computed(() => {
   return srcSet()
 })
 
-function srcSet (suffix: string = ''): string {
+function srcSet(suffix: string = ''): string {
   const srcSet: string[] = []
   props.imageStyles.forEach((imageStyle) => {
     const imageUrl = buildImageUrl(imageStyle, suffix)
@@ -71,11 +79,11 @@ function srcSet (suffix: string = ''): string {
   return srcSet.join(', ')
 }
 
-function buildImageUrl (style: ImageStyle, suffix: string = ''): string|null {
+function buildImageUrl(style: ImageStyle, suffix: string = ''): string | null {
   if (typeof props.uri === 'string') {
     return `${useImageUrl(props.uri, style.name)}${suffix} ${
-    style.width
-  }w`
+      style.width
+    }w`
   }
   return null
 }
@@ -84,7 +92,7 @@ watch(
   () => props.uri,
   () => {
     img.value?.classList.add('lazyload')
-  }
+  },
 )
 </script>
 

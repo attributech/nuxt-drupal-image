@@ -1,7 +1,18 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit';
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import type { ImageStyle } from './types'
 
 export interface ModuleOptions {
-  // Define module options here if needed
+  /**
+   * Base URL of the Drupal server
+   * @default ''
+   */
+  serverUrl?: string
+
+  /**
+   * Default image styles configuration
+   * @default undefined
+   */
+  defaultImageStyles?: ImageStyle[]
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -9,8 +20,8 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@attributech/nuxt-drupal-image',
     configKey: 'drupalImage',
     compatibility: {
-      nuxt: '^2.16.0 || ^3.0.0'
-    }
+      nuxt: '^2.16.0 || ^3.0.0',
+    },
   },
   defaults: {},
   setup(options, nuxt) {
@@ -24,5 +35,5 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add plugin to support Nuxt 2 with Bridge
     addPlugin(resolver.resolve('./runtime/plugin'))
-  }
+  },
 })

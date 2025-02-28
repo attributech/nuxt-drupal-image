@@ -6,6 +6,6 @@
  * Represents an image style configuration
  */
 export interface ImageStyle {
-  name: string;
-  width: number;
+  name: string
+  width: number
 }

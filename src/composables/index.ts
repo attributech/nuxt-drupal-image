@@ -1,1 +1,1 @@
-export { default as useImageUrl } from './useImageUrl.js';
+export { default as useImageUrl } from './useImageUrl.js'
