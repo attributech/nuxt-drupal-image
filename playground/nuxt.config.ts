@@ -6,6 +6,27 @@ export default defineNuxtConfig({
   // Enable the module we're testing
   modules: ['../src/module'],
 
+  // Register plugins
+  plugins: [
+    '~/plugins/dynamic-url.ts',
+  ],
+
+  // For development, disable SSR to make testing easier
+  ssr: false,
+
+  // Development settings
+  devtools: { enabled: true },
+
+  // Expose the serverUrl to the runtime config
+  runtimeConfig: {
+    public: {
+      // Will be set dynamically by the plugin
+      serverUrl: '',
+    },
+  },
+
+  compatibilityDate: '2025-02-28',
+
   // Configure the module
   drupalImage: {
     // Will be set dynamically by the plugin
@@ -21,27 +42,6 @@ export default defineNuxtConfig({
       { name: 'default_xl', width: 1440 },
       { name: 'default_xxl', width: 1920 },
       { name: 'default_xxxl', width: 2560 },
-    ]
+    ],
   },
-
-  // Expose the serverUrl to the runtime config
-  runtimeConfig: {
-    public: {
-      // Will be set dynamically by the plugin
-      serverUrl: ''
-    }
-  },
-  
-  // Register plugins
-  plugins: [
-    '~/plugins/dynamic-url.ts'
-  ],
-
-  // Development settings
-  devtools: { enabled: true },
-
-  // For development, disable SSR to make testing easier
-  ssr: false,
-
-  compatibilityDate: '2025-02-28'
 })

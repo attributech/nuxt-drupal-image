@@ -1,5 +1,4 @@
-// Type declaration for Nuxt server API
-declare const defineEventHandler: (handler: () => any) => any
+import { defineEventHandler } from 'h3'
 
 export default defineEventHandler(() => {
   return {
@@ -10,7 +9,7 @@ export default defineEventHandler(() => {
         uri: 'public://sample1.jpg',
         alt: 'A sample image for testing',
         width: 1920,
-        height: 1080
+        height: 1080,
       },
       {
         id: 2,
@@ -18,7 +17,7 @@ export default defineEventHandler(() => {
         uri: 'public://sample2.jpg',
         alt: 'Another sample image',
         width: 800,
-        height: 600
+        height: 600,
       },
       {
         id: 3,
@@ -26,7 +25,7 @@ export default defineEventHandler(() => {
         uri: 'public://sample3.jpg',
         alt: 'Yet another sample image',
         width: 1200,
-        height: 800
+        height: 800,
       },
       {
         id: 4,
@@ -34,7 +33,7 @@ export default defineEventHandler(() => {
         uri: 'public://portrait.jpg',
         alt: 'A portrait orientation image',
         width: 768,
-        height: 1024
+        height: 1024,
       },
       {
         id: 5,
@@ -42,8 +41,8 @@ export default defineEventHandler(() => {
         uri: 'public://square.jpg',
         alt: 'A square image',
         width: 500,
-        height: 500
-      }
-    ]
+        height: 500,
+      },
+    ],
   }
 })

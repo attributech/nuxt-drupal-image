@@ -5,9 +5,9 @@
  * Run with: node scripts/download-images.js
  */
 
-import fs from 'fs'
-import path from 'path'
-import https from 'https'
+import fs from 'node:fs'
+import path from 'node:path'
+import https from 'node:https'
 
 const imagesDir = path.resolve(process.cwd(), 'public/images')
 
@@ -44,12 +44,12 @@ const images = [
 for (const image of images) {
   const filePath = path.join(imagesDir, image.name)
   console.log(`Downloading ${image.name}...`)
-  
+
   const file = fs.createWriteStream(filePath)
-  
+
   https.get(image.url, (response) => {
     response.pipe(file)
-    
+
     file.on('finish', () => {
       file.close()
       console.log(`Downloaded ${image.name}`)

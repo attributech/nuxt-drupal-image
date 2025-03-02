@@ -3,28 +3,32 @@
     <h2>Advanced Examples</h2>
     <p>These examples demonstrate more advanced usage of the DrupalImage component.</p>
 
-    <div v-if="pending">Loading images...</div>
-    <div v-else-if="error">Error loading images: {{ error }}</div>
+    <div v-if="pending">
+      Loading images...
+    </div>
+    <div v-else-if="error">
+      Error loading images: {{ error }}
+    </div>
     <div v-else>
-      <ExampleCard 
-        title="Custom Image Styles" 
+      <ExampleCard
+        title="Custom Image Styles"
         description="Using custom image styles instead of the defaults"
         :code="customStylesCode"
       >
-        <DrupalImage 
+        <DrupalImage
           v-if="images.length > 0"
           :uri="images[0].uri"
           :alt="images[0].alt"
-          :imageStyles="customImageStyles"
+          :image-styles="customImageStyles"
         />
       </ExampleCard>
 
-      <ExampleCard 
-        title="Portrait Image" 
+      <ExampleCard
+        title="Portrait Image"
         description="Handling portrait orientation images"
         :code="portraitCode"
       >
-        <DrupalImage 
+        <DrupalImage
           v-if="images.length > 3"
           :uri="images[3].uri"
           :alt="images[3].alt"
@@ -33,12 +37,12 @@
         />
       </ExampleCard>
 
-      <ExampleCard 
-        title="Square Image" 
+      <ExampleCard
+        title="Square Image"
         description="Handling square images"
         :code="squareCode"
       >
-        <DrupalImage 
+        <DrupalImage
           v-if="images.length > 4"
           :uri="images[4].uri"
           :alt="images[4].alt"
@@ -54,8 +58,7 @@
 // Type declarations for Nuxt and Vue composables
 declare const useFetch: (url: string) => any
 declare const computed: (getter: () => any) => any
-declare const ref: (value: any) => any
-declare interface ImageStyle { name: string; width: number }
+declare interface ImageStyle { name: string, width: number }
 
 const { data: imageData, pending, error } = useFetch('/api/images')
 const images = computed(() => imageData.value?.images || [])
@@ -65,7 +68,7 @@ const customImageStyles: ImageStyle[] = [
   { name: 'custom_small', width: 400 },
   { name: 'custom_medium', width: 800 },
   { name: 'custom_large', width: 1200 },
-  { name: 'custom_xlarge', width: 1600 }
+  { name: 'custom_xlarge', width: 1600 },
 ]
 
 // Code examples for display

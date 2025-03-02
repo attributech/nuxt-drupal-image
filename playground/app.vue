@@ -8,11 +8,11 @@
         <NuxtLink to="/responsive">Responsive Examples</NuxtLink>
       </nav>
     </header>
-    
+
     <main>
       <NuxtPage />
     </main>
-    
+
     <footer>
       <p>@attributech/nuxt-drupal-image playground</p>
     </footer>

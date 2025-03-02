@@ -4,14 +4,7 @@
  * Works with both Nuxt 2 (with Bridge) and Nuxt 3
  */
 
-// This will be properly resolved at runtime in the Nuxt environment
-// We're using a type declaration to avoid TypeScript errors during development
-declare const useRuntimeConfig: () => {
-  public?: {
-    serverUrl?: string
-  }
-  serverUrl?: string
-}
+import { useRuntimeConfig } from '#imports'
 
 /**
  * Builds a URL for a Drupal image with a specific image style

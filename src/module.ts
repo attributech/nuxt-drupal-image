@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, installModule } from '@nuxt/kit'
 import type { ImageStyle } from './types'
 
 export interface ModuleOptions {
@@ -29,11 +29,19 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add composables and components auto-import
     nuxt.hook('imports:dirs', (dirs) => {
-      dirs.push(resolver.resolve('./composables'))
+      // Use specific files instead of directories to avoid duplicate imports
+      dirs.push(resolver.resolve('./composables/useImageUrl'))
       dirs.push(resolver.resolve('./runtime/components'))
     })
 
     // Add plugin to support Nuxt 2 with Bridge
     addPlugin(resolver.resolve('./runtime/plugin'))
+
+    // Install and configure nuxt-lazyimages module
+    installModule('nuxt-lazyimages', {
+      expFactor: 10,
+      loadMode: 3,
+      loadHidden: false,
+    })
   },
 })

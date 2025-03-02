@@ -23,11 +23,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-module-build --config module.config.ts",
+    "build": "nuxt-module-build build --config module.config.ts",
     "dev": "nuxi dev playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "nuxt-module-build --config module.config.ts",
+    "prepare": "nuxt-module-build build --config module.config.ts",
     "release": "npm run lint && npm run build && npm publish",
     "prerelease": "npm run lint && npm run build",
     "test": "vitest run",
@@ -39,6 +39,7 @@
     "@nuxt/module-builder": "^0.8.4",
     "@types/node": "^22.13.5",
     "eslint": "^9.21.0",
+    "nuxt-lazyimages": "^0.2.1",
     "typescript": "^5.7.3",
     "vitest": "^3.0.7"
   },

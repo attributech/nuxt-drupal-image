@@ -3,16 +3,20 @@
     <h2>Responsive Examples</h2>
     <p>These examples demonstrate responsive behavior of the DrupalImage component.</p>
 
-    <div v-if="pending">Loading images...</div>
-    <div v-else-if="error">Error loading images: {{ error }}</div>
+    <div v-if="pending">
+      Loading images...
+    </div>
+    <div v-else-if="error">
+      Error loading images: {{ error }}
+    </div>
     <div v-else>
-      <ExampleCard 
-        title="Responsive Container" 
+      <ExampleCard
+        title="Responsive Container"
         description="Image in a responsive container that changes width"
         :code="responsiveContainerCode"
       >
         <div class="responsive-container">
-          <DrupalImage 
+          <DrupalImage
             v-if="images.length > 0"
             :uri="images[0].uri"
             :alt="images[0].alt"
@@ -20,12 +24,12 @@
         </div>
       </ExampleCard>
 
-      <ExampleCard 
-        title="Custom Sizes Attribute" 
+      <ExampleCard
+        title="Custom Sizes Attribute"
         description="Using a custom sizes attribute for responsive loading"
         :code="customSizesCode"
       >
-        <DrupalImage 
+        <DrupalImage
           v-if="images.length > 1"
           :uri="images[1].uri"
           :alt="images[1].alt"
@@ -33,18 +37,24 @@
         />
       </ExampleCard>
 
-      <ExampleCard 
-        title="Grid Layout" 
+      <ExampleCard
+        title="Grid Layout"
         description="Multiple images in a responsive grid layout"
         :code="gridLayoutCode"
       >
         <div class="image-grid">
-          <div v-for="(image, index) in images.slice(0, 3)" :key="index" class="grid-item">
-            <DrupalImage 
+          <div
+            v-for="(image, index) in images.slice(0, 3)"
+            :key="index"
+            class="grid-item"
+          >
+            <DrupalImage
               :uri="image.uri"
               :alt="image.alt"
             />
-            <p class="image-caption">{{ image.title }}</p>
+            <p class="image-caption">
+              {{ image.title }}
+            </p>
           </div>
         </div>
       </ExampleCard>
@@ -56,7 +66,6 @@
 // Type declarations for Nuxt and Vue composables
 declare const useFetch: (url: string) => any
 declare const computed: (getter: () => any) => any
-declare const ref: (value: any) => any
 
 const { data: imageData, pending, error } = useFetch('/api/images')
 const images = computed(() => imageData.value?.images || [])

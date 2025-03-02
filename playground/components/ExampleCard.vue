@@ -1,13 +1,20 @@
 <template>
   <div class="example-card">
-    <h3 v-if="title">{{ title }}</h3>
-    <p v-if="description">{{ description }}</p>
-    
+    <h3 v-if="title">
+      {{ title }}
+    </h3>
+    <p v-if="description">
+      {{ description }}
+    </p>
+
     <div class="example-content">
-      <slot></slot>
+      <slot />
     </div>
-    
-    <div v-if="code" class="code-block">
+
+    <div
+      v-if="code"
+      class="code-block"
+    >
       <pre><code>{{ code }}</code></pre>
     </div>
   </div>
