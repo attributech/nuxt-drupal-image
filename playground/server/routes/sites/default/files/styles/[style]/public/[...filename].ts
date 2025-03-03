@@ -78,24 +78,12 @@ export default defineEventHandler(async (event) => {
     // Remove .webp extension to find the original image
     originalFilename = filename.slice(0, -5)
   }
-  
-  // Construct the path to the original image
-  const imagePath = join(process.cwd(), 'public/images', originalFilename)
-  
-  // Check if the image exists
-  if (!existsSync(imagePath)) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: `Image "${originalFilename}" not found`
-    })
-  }
 
   try {
-  
     // Create a solid color image with text
     const svg = `
       <svg width="${styleConfig.width}" height="${styleConfig.width * 0.66}" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="#F0F0F0"/>
+        <rect width="100%" height="100%" fill="#D3D3D3"/>
         <text x="50%" y="50%" font-family="Arial" font-size="42" fill="black" text-anchor="middle" dominant-baseline="middle">
           Style: ${styleConfig.name}
           Width:  ${styleConfig.width}
