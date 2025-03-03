@@ -30,7 +30,8 @@
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
     "release": "npm run lint && npm run build && npm publish",
     "prerelease": "npm run lint && npm run build",
-    "test": "vitest run",
+    "test": "nuxi prepare playground && vitest run --coverage --typecheck",
+    "test:e2e": "playwright test",
     "playground": "nuxi dev playground"
   },
   "dependencies": {
@@ -46,6 +47,11 @@
   "devDependencies": {
     "@nuxt/schema": "^3.10.0",
     "@nuxt/test-utils": "^3.10.0",
+    "@playwright/test": "^1.50.1",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/coverage-v8": "^3.0.7",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.0.0",
     "nuxt": "^3.10.0"
   },
   "peerDependencies": {

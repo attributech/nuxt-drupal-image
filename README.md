@@ -142,6 +142,42 @@ The playground includes:
 
 For more details, see the [playground README](./playground/README.md).
 
+### Testing
+
+This module includes both unit tests and end-to-end (e2e) tests to ensure functionality works as expected.
+
+#### Unit Tests
+
+Unit tests are implemented using Vitest and test the core functionality of the module:
+
+```bash
+# Run unit tests
+npm run test:unit
+
+# Run unit tests in watch mode
+npm run test:unit:watch
+```
+
+#### End-to-End Tests
+
+E2E tests use Playwright to test the module in a real Nuxt application context:
+
+```bash
+# Run e2e tests
+npm run test:e2e
+
+# Run e2e tests with UI
+npm run test:e2e:ui
+```
+
+#### Run All Tests
+
+To run both unit and e2e tests:
+
+```bash
+npm run test:all
+```
+
 ## License
 
 MIT

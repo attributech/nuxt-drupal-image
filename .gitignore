@@ -35,5 +35,7 @@ lerna-debug.log*
 .env.*
 !.env.example
 
-# Keep playground in git
-# playground
+# Test files
+test-results
+playwright-report
+coverage
