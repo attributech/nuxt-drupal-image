@@ -27,7 +27,7 @@
     "dev": "nuxi dev playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "nuxt-module-build build --config module.config.ts",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
     "release": "npm run lint && npm run build && npm publish",
     "prerelease": "npm run lint && npm run build",
     "test": "vitest run",
