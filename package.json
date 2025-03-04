@@ -17,13 +17,16 @@
   ],
   "author": "attribute",
   "license": "MIT",
-  "main": "dist/module.mjs",
+  "exports": {
+    ".": "./dist/module.mjs"
+  },
+  "main": "./dist/module.mjs",
   "types": "dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-module-build build --config module.config.ts",
+    "build": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

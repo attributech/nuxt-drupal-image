@@ -13,7 +13,7 @@ import { useRuntimeConfig } from '#imports'
  * @param style - The Drupal image style name (e.g., 'thumbnail', 'large')
  * @returns The complete URL to the styled image
  */
-export default function useImageUrl(imageUri: string, style: string): string {
+export const useImageUrl = (imageUri: string, style: string): string => {
   const config = useRuntimeConfig()
 
   // Handle both Nuxt 2 and Nuxt 3 config structures
