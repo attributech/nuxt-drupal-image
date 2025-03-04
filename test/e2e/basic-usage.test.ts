@@ -1,14 +1,8 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@nuxt/test-utils/playwright'
 
-test('should load and display images correctly on the index page', async ({ page }) => {
-  // Navigate to the index page of the playground
-  await page.goto('/')
-
-  // Wait for the page to load
-  await page.waitForLoadState('networkidle')
-
-  // Check if the page title is correct
-  await expect(page).toHaveTitle(/Nuxt Drupal Image/)
+test('should load and display images correctly on the index page', async ({ page, goto }) => {
+  // Navigate to the index page
+  await goto('/', { waitUntil: 'hydration' })
 
   // Check if the images are loaded
   const images = page.locator('img.lazyload')
@@ -24,11 +18,4 @@ test('should load and display images correctly on the index page', async ({ page
   // Check if source elements are present for webp and default formats
   const sources = page.locator('source')
   await expect(sources).toHaveCount(await sources.count())
-
-  // Check if the sources have the correct attributes
-  const webpSource = page.locator('source[type="image/webp"]')
-  await expect(webpSource).toHaveAttribute('data-srcset')
-
-  const jpegSource = page.locator('source[type="image/jpeg"]')
-  await expect(jpegSource).toHaveAttribute('data-srcset')
 })

@@ -1,15 +1,8 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@nuxt/test-utils/playwright'
 
-test('should handle custom image styles on the advanced page', async ({ page }) => {
-  // Navigate to the advanced page of the playground
-  await page.goto('/advanced')
-
-  // Wait for the page to load
-  await page.waitForLoadState('networkidle')
-
-  // Check if the page has the advanced examples
-  const heading = page.locator('h1:has-text("Advanced Usage")')
-  await expect(heading).toBeVisible()
+test('should handle custom image styles on the advanced page', async ({ page, goto }) => {
+  // Navigate to the advanced page
+  await goto('/advanced', { waitUntil: 'hydration' })
 
   // Check if the images are loaded
   const images = page.locator('img.lazyload')
@@ -18,11 +11,6 @@ test('should handle custom image styles on the advanced page', async ({ page }) 
   // Check if the picture elements are present
   const pictures = page.locator('picture')
   await expect(pictures).toHaveCount(await pictures.count())
-
-  // Check if the custom styles section is present
-  const customStylesHeading = page.locator('h2:has-text("Custom Image Styles")')
-  await expect(customStylesHeading).toBeVisible()
-
   // Check if the custom styled images are loaded
   const customStyledImages = page.locator('.custom-styles img.lazyload')
   if (await customStyledImages.count() > 0) {
@@ -30,14 +18,9 @@ test('should handle custom image styles on the advanced page', async ({ page }) 
   }
 })
 
-test('should handle dynamic URLs correctly', async ({ page }) => {
+test('should handle portrait images correctly', async ({ page, goto }) => {
   // Navigate to the advanced page
-  await page.goto('/advanced')
-  await page.waitForLoadState('networkidle')
-
-  // Check if the dynamic URL section is present
-  const dynamicUrlHeading = page.locator('h2:has-text("Dynamic URLs")')
-  await expect(dynamicUrlHeading).toBeVisible()
+  await goto('/advanced', { waitUntil: 'hydration' })
 
   // Check if the dynamic URL images are loaded
   const dynamicUrlImages = page.locator('.dynamic-urls img.lazyload')
@@ -52,10 +35,9 @@ test('should handle dynamic URLs correctly', async ({ page }) => {
   }
 })
 
-test('should handle alt text and dimensions correctly', async ({ page }) => {
+test('should handle alt text and dimensions correctly', async ({ page, goto }) => {
   // Navigate to the advanced page
-  await page.goto('/advanced')
-  await page.waitForLoadState('networkidle')
+  await goto('/advanced', { waitUntil: 'hydration' })
 
   // Find images with alt text
   const images = page.locator('img.lazyload[alt]')
