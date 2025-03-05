@@ -24,7 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: {},
-  setup(options, nuxt) {
+  setup() {
     const resolver = createResolver(import.meta.url)
 
     // Register the DrupalImage component
