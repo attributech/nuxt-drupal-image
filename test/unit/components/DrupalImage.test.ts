@@ -1,36 +1,9 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createTestImageStyles, createTestImageUri } from '../../setup/test-utils'
-import useImageUrlMock, { setMockServerUrl } from '../../setup/mocks/useImageUrl.mock'
-
-// Import after mocking
 import DrupalImage from '../../../src/runtime/components/DrupalImage.vue'
 
-// Mock the useImageUrl composable
-vi.mock('../../../src/composables/useImageUrl', () => {
-  return {
-    default: useImageUrlMock,
-  }
-})
-
-// Mock the lazyload functionality
-vi.mock('vue', async () => {
-  const actual = await vi.importActual('vue')
-  return {
-    ...actual,
-    ref: vi.fn(val => ({ value: val })),
-  }
-})
-
 describe('DrupalImage', () => {
-  beforeEach(() => {
-    // Reset mocks before each test
-    vi.resetAllMocks()
-
-    // Setup default mock
-    setMockServerUrl('https://example.com')
-  })
-
   it('should render the component with default props', () => {
     const imageUri = createTestImageUri()
     const wrapper = mount(DrupalImage, {
