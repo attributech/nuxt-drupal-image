@@ -30,10 +30,10 @@
     "dev": "nuxi dev playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
-    "release": "npm run lint && npm run build && npm publish",
-    "prerelease": "npm run lint && npm run build",
-    "test": "npm run test:unit && npm run test:e2e",
+    "dev:prepare": "nuxt-module-build build && nuxi prepare playground",
+    "release": "pnpm run lint && pnpm run build && pnpm publish",
+    "prerelease": "pnpm run lint && pnpm run build",
+    "test": "pnpm run test:unit && pnpm run test:e2e",
     "test:unit": "nuxi prepare playground && vitest run --coverage --typecheck",
     "test:e2e": "playwright test",
     "playground": "nuxi dev playground"
@@ -64,6 +64,8 @@
     "nuxt": "^2.16.0 || ^3.0.0"
   },
   "engines": {
-    "node": ">=20.10.0"
-  }
+    "node": ">=20.10.0",
+    "pnpm": ">=10"
+  },
+  "packageManager": "pnpm@10.18.1"
 }
