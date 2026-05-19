@@ -31,9 +31,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
-    "release": "npm run lint && npm run build && npm publish",
-    "prerelease": "npm run lint && npm run build",
-    "test": "npm run test:unit && npm run test:e2e",
+    "release": "pnpm run lint && pnpm run build && pnpm publish",
+    "prerelease": "pnpm run lint && pnpm run build",
+    "test": "pnpm run test:unit && pnpm run test:e2e",
     "test:unit": "nuxi prepare playground && vitest run --coverage --typecheck",
     "test:e2e": "playwright test",
     "playground": "nuxi dev playground"
