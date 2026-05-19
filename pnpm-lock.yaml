@@ -9,22 +9,22 @@ importers:
   .:
     dependencies:
       '@nuxt/eslint-config':
-        specifier: ^1.1.0
+        specifier: ^1.15.2
         version: 1.15.2(@typescript-eslint/utils@8.59.4(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3))(@vue/compiler-sfc@3.5.34)(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3)
       '@nuxt/module-builder':
         specifier: ^0.8.4
         version: 0.8.4(@nuxt/kit@4.4.6(magicast@0.5.3))(nuxi@3.35.2)(typescript@5.9.3)
       '@types/node':
-        specifier: ^22.13.5
+        specifier: ^22.19.19
         version: 22.19.19
       eslint:
-        specifier: ^9.21.0
+        specifier: ^9.39.4
         version: 9.39.4(jiti@2.7.0)
       nuxt-lazyimages:
         specifier: ^0.2.1
         version: 0.2.1(magicast@0.5.3)
       typescript:
-        specifier: ^5.7.3
+        specifier: ^5.9.3
         version: 5.9.3
     devDependencies:
       '@nuxt/kit':
@@ -34,34 +34,34 @@ importers:
         specifier: ^4.4.6
         version: 4.4.6
       '@nuxt/test-utils':
-        specifier: ^3.17.1
+        specifier: ^3.23.0
         version: 3.23.0(@playwright/test@1.60.0)(@vue/test-utils@2.4.10(@vue/compiler-dom@3.5.34)(@vue/server-renderer@3.5.34(vue@3.5.34(typescript@5.9.3)))(vue@3.5.34(typescript@5.9.3)))(crossws@0.4.5(srvx@0.11.15))(happy-dom@17.6.3)(jsdom@26.1.0)(magicast@0.5.3)(playwright-core@1.60.0)(typescript@5.9.3)(vitest@3.2.4(@types/node@22.19.19)(happy-dom@17.6.3)(jiti@2.7.0)(jsdom@26.1.0)(terser@5.47.1)(yaml@2.9.0))
       '@playwright/test':
-        specifier: ^1.50.1
+        specifier: ^1.60.0
         version: 1.60.0
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
+        specifier: ^5.2.4
         version: 5.2.4(vite@7.3.3(@types/node@22.19.19)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       '@vitest/coverage-v8':
-        specifier: ^3.0.7
+        specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4(@types/node@22.19.19)(happy-dom@17.6.3)(jiti@2.7.0)(jsdom@26.1.0)(terser@5.47.1)(yaml@2.9.0))
       '@vue/test-utils':
-        specifier: ^2.4.6
+        specifier: ^2.4.10
         version: 2.4.10(@vue/compiler-dom@3.5.34)(@vue/server-renderer@3.5.34(vue@3.5.34(typescript@5.9.3)))(vue@3.5.34(typescript@5.9.3))
       happy-dom:
-        specifier: ^17.2.2
+        specifier: ^17.6.3
         version: 17.6.3
       jsdom:
-        specifier: ^26.0.0
+        specifier: ^26.1.0
         version: 26.1.0
       nuxt:
-        specifier: ^4.4.6
+        specifier: ^4.0.0
         version: 4.4.6(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@babel/plugin-syntax-typescript@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@22.19.19)(@vue/compiler-sfc@3.5.34)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.4(jiti@2.7.0))(ioredis@5.10.1)(magicast@0.5.3)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@3.30.0))(rollup@3.30.0)(srvx@0.11.15)(terser@5.47.1)(typescript@5.9.3)(vite@7.3.3(@types/node@22.19.19)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(yaml@2.9.0)
       playwright-core:
-        specifier: ^1.50.1
+        specifier: ^1.60.0
         version: 1.60.0
       vitest:
-        specifier: ^3.0.7
+        specifier: ^3.2.4
         version: 3.2.4(@types/node@22.19.19)(happy-dom@17.6.3)(jiti@2.7.0)(jsdom@26.1.0)(terser@5.47.1)(yaml@2.9.0)
 
 packages:
