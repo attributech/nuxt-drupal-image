@@ -20,7 +20,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: '@attributech/nuxt-drupal-image',
     configKey: 'drupalImage',
     compatibility: {
-      nuxt: '^2.16.0 || ^3.0.0',
+      nuxt: '^2.16.0 || ^3.0.0 || ^4.0.0',
     },
   },
   defaults: {},
