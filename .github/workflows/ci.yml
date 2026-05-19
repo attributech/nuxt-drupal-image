@@ -11,34 +11,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - uses: actions/checkout@v3
-      - run: npm install
-      - run: npm run dev:prepare
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run dev:prepare
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - uses: actions/checkout@v3
-      - run: npm install
+          cache: pnpm
+      - run: pnpm install
       - run: npx playwright install chromium --with-deps
-      - run: npm run dev:prepare
-      - run: npm run test:unit
-      - run: npm run test:e2e
+      - run: pnpm run dev:prepare
+      - run: pnpm run test:unit
+      - run: pnpm run test:e2e
 
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: npm install
-      - run: npm run dev:prepare
-      - run: npm run build
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run dev:prepare
+      - run: pnpm run build
