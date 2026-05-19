@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "download-images": "node scripts/download-images.js",
-    "setup": "npm install && npm run download-images"
+    "setup": "pnpm install && pnpm run download-images"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
