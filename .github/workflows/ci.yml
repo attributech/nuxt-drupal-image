@@ -19,7 +19,7 @@ jobs:
           node-version: lts/*
           cache: pnpm
       - run: pnpm install
-      - run: pnpm run dev:prepare
+      - run: pnpm run lint
 
   test:
     runs-on: ubuntu-latest
