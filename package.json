@@ -36,7 +36,8 @@
     "test": "pnpm run test:unit && pnpm run test:e2e",
     "test:unit": "nuxi prepare playground && vitest run --coverage --typecheck",
     "test:e2e": "playwright test",
-    "playground": "nuxi dev playground"
+    "playground": "nuxi dev playground",
+    "typecheck": "nuxi prepare playground && nuxt typecheck playground"
   },
   "dependencies": {
     "@nuxt/eslint-config": "^1.15.2",
@@ -58,7 +59,9 @@
     "jsdom": "^26.1.0",
     "nuxt": "^4.4.6",
     "playwright-core": "^1.60.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "vue": "^3.5.40",
+    "vue-tsc": "^3.3.8"
   },
   "peerDependencies": {
     "nuxt": "^2.16.0 || ^3.0.0 || ^4.0.0"
