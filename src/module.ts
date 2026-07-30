@@ -1,5 +1,5 @@
 import { defineNuxtModule, installModule, addImports, createResolver, addComponent } from '@nuxt/kit'
-import type { ImageStyle } from './types'
+import type { ImageStyle } from './runtime/types'
 
 export interface ModuleOptions {
   /**

@@ -19,9 +19,16 @@ export default defineEventHandler(async (event) => {
   // Get route parameters
   const params = getRouterParams(event)
   const style = params.style
-  const filename = Array.isArray(params.filename) 
-    ? params.filename.join('/') 
+  const filename = Array.isArray(params.filename)
+    ? params.filename.join('/')
     : params.filename
+
+  if (!filename) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'Missing filename',
+    })
+  }
 
   // Get the image styles configuration from nuxt.config.ts
   // Read and parse the config file directly
@@ -41,8 +48,8 @@ export default defineEventHandler(async (event) => {
     
     while ((match = styleRegex.exec(stylesText)) !== null) {
       imageStyles.push({
-        name: match[1],
-        width: parseInt(match[2], 10)
+        name: match[1]!,
+        width: parseInt(match[2]!, 10)
       })
     }
   }

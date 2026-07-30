@@ -26,7 +26,7 @@
 import { computed, ref, watch } from 'vue'
 import type { Ref } from 'vue'
 import { useImageUrl } from '../composables'
-import type { ImageStyle } from '../../types/index'
+import type { ImageStyle } from '../types/index'
 
 const img: Ref<HTMLImageElement | null> = ref(null)
 const imageStyleBase = 'default'

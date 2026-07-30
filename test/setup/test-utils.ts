@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import type { ImageStyle } from '../../src/types'
+import type { ImageStyle } from '../../src/runtime/types'
 
 /**
  * Mock the Nuxt runtime config with a custom server URL
