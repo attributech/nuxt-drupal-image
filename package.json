@@ -1,6 +1,6 @@
 {
   "name": "@attributech/nuxt-drupal-image",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Nuxt module for handling Drupal image styles",
   "type": "module",
   "repository": {
